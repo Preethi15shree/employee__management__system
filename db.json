@@ -1,0 +1,1424 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@company.com",
+      "department": "Engineering",
+      "designation": "Senior Engineer",
+      "status": "Active",
+      "joiningDate": "2022-03-15",
+      "managerId": "2",
+      "phone": "+1-555-0103",
+      "address": "123 Elm St, New York, NY 10001",
+      "salary": 95000,
+      "pan": "ABCDE1234F",
+      "uan": "100123456789",
+      "bankName": "Chase Bank",
+      "bankAccount": "XXXX XXXX 4521"
+    },
+    {
+      "id": "2",
+      "name": "Bob Smith",
+      "email": "bob.smith@company.com",
+      "department": "Marketing",
+      "designation": "Marketing Manager",
+      "status": "Active",
+      "joiningDate": "2021-07-01",
+      "managerId": null,
+      "phone": "+1-555-0102",
+      "address": "45 Oak Ave, Los Angeles, CA 90001",
+      "salary": 110000,
+      "pan": "BCDEF2345G",
+      "uan": "100234567890",
+      "bankName": "Bank of America",
+      "bankAccount": "XXXX XXXX 7832"
+    },
+    {
+      "id": "3",
+      "name": "Carol White",
+      "email": "carol.white@company.com",
+      "department": "HR",
+      "designation": "HR Specialist",
+      "status": "Inactive",
+      "joiningDate": "2020-11-20",
+      "managerId": "9",
+      "phone": "+1-555-0103",
+      "address": "78 Pine Rd, Austin, TX 73301",
+      "salary": 72000,
+      "pan": "CDEFG3456H",
+      "uan": "100345678901",
+      "bankName": "Wells Fargo",
+      "bankAccount": "XXXX XXXX 3390"
+    },
+    {
+      "id": "4",
+      "name": "David Brown",
+      "email": "david.brown@company.com",
+      "department": "Finance",
+      "designation": "Financial Analyst",
+      "status": "Active",
+      "joiningDate": "2023-01-10",
+      "managerId": "2",
+      "phone": "+1-555-0104",
+      "address": "90 Maple Dr, Miami, FL 33101",
+      "salary": 85000,
+      "pan": "DEFGH4567I",
+      "uan": "100456789012",
+      "bankName": "Citibank",
+      "bankAccount": "XXXX XXXX 6614"
+    },
+    {
+      "id": "5",
+      "name": "Eva Green",
+      "email": "eva.green@company.com",
+      "department": "Engineering",
+      "designation": "Frontend Developer",
+      "status": "Active",
+      "joiningDate": "2023-06-05",
+      "managerId": "2",
+      "phone": "+1-555-0105",
+      "address": "12 Cedar Ln, Seattle, WA 98101",
+      "salary": 88000,
+      "pan": "EFGHI5678J",
+      "uan": "100567890123",
+      "bankName": "US Bank",
+      "bankAccount": "XXXX XXXX 9920"
+    },
+    {
+      "id": "6",
+      "name": "Frank Lee",
+      "email": "frank.lee@company.com",
+      "department": "Sales",
+      "designation": "Sales Executive",
+      "status": "Active",
+      "joiningDate": "2022-09-18",
+      "managerId": "2",
+      "phone": "+1-555-0106",
+      "address": "34 Birch Blvd, Chicago, IL 60601",
+      "salary": 78000,
+      "pan": "FGHIJ6789K",
+      "uan": "100678901234",
+      "bankName": "PNC Bank",
+      "bankAccount": "XXXX XXXX 1187"
+    },
+    {
+      "id": "7",
+      "name": "Grace Kim",
+      "email": "grace.kim@company.com",
+      "department": "Engineering",
+      "designation": "Backend Developer",
+      "status": "Inactive",
+      "joiningDate": "2021-04-22",
+      "managerId": "1",
+      "phone": "+1-555-0107",
+      "address": "56 Willow Way, Portland, OR 97201",
+      "salary": 90000,
+      "pan": "GHIJK7890L",
+      "uan": "100789012345",
+      "bankName": "TD Bank",
+      "bankAccount": "XXXX XXXX 4453"
+    },
+    {
+      "id": "8",
+      "name": "Henry Wilson",
+      "email": "henry.wilson@company.com",
+      "department": "Marketing",
+      "designation": "Content Strategist",
+      "status": "Active",
+      "joiningDate": "2023-02-14",
+      "managerId": "2",
+      "phone": "+1-555-0108",
+      "address": "78 Aspen Ct, Denver, CO 80201",
+      "salary": 75000,
+      "pan": "HIJKL8901M",
+      "uan": "100890123456",
+      "bankName": "KeyBank",
+      "bankAccount": "XXXX XXXX 8871"
+    },
+    {
+      "id": "9",
+      "name": "Iris Chen",
+      "email": "iris.chen@company.com",
+      "department": "HR",
+      "designation": "HR Manager",
+      "status": "Active",
+      "joiningDate": "2022-08-30",
+      "managerId": null,
+      "phone": "+1-555-0109",
+      "address": "90 Spruce St, Atlanta, GA 30301",
+      "salary": 105000,
+      "pan": "IJKLM9012N",
+      "uan": "100901234567",
+      "bankName": "Truist Bank",
+      "bankAccount": "XXXX XXXX 2265"
+    },
+    {
+      "id": "11",
+      "name": "Karen Adams",
+      "email": "karen.adams@company.com",
+      "department": "Sales",
+      "designation": "Sales Manager",
+      "status": "Active",
+      "joiningDate": "2019-10-07",
+      "managerId": null,
+      "phone": "+1-555-0111",
+      "address": "22 Poplar Pl, Las Vegas, NV 89101",
+      "salary": 115000,
+      "pan": "KLMNO1234P",
+      "uan": "101123456789",
+      "bankName": "Morgan Stanley",
+      "bankAccount": "XXXX XXXX 0012"
+    },
+    {
+      "name": "Jayanthan Krish",
+      "email": "krish@gmail.com",
+      "department": "Engineering",
+      "designation": "Senior Developer",
+      "status": "Active",
+      "joiningDate": "2026-07-24",
+      "id": "OcTrG-quk7A",
+      "currentShift": "Remote / WFH"
+    },
+    {
+      "id": "n5qS-GBd4U8",
+      "name": "Noah Davis",
+      "email": "noah.davis@company.com",
+      "department": "Sales",
+      "designation": "Sales Representative",
+      "phone": "",
+      "joinDate": "2026-08-15",
+      "status": "Active",
+      "managerId": "2",
+      "salary": 0,
+      "skills": [],
+      "joiningDate": "2026-08-08"
+    },
+    {
+      "name": "Preethi",
+      "email": "preethi@gmail.com",
+      "department": "Finance",
+      "designation": "Specialist",
+      "status": "Active",
+      "joiningDate": "2026-12-03",
+      "id": "NErkkbd41UI",
+      "skills": [],
+      "salary": 0,
+      "managerId": "2",
+      "phone": "987345245",
+      "address": "42 Gandhi Nagar, Chennai, Tamil Nadu",
+      "dateOfBirth": "",
+      "gender": "Female",
+      "emergencyContact": "",
+      "emergencyPhone": "",
+      "bio": "Good Communicator",
+      "managerNote": ""
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@company.com",
+      "password": "admin123",
+      "name": "Admin User",
+      "role": "system_admin",
+      "employeeId": null
+    },
+    {
+      "id": "2",
+      "email": "alice.johnson@company.com",
+      "password": "emp123456",
+      "name": "Alice Johnson",
+      "role": "employee",
+      "employeeId": "1"
+    },
+    {
+      "id": "3",
+      "email": "bob.smith@company.com",
+      "password": "mgr123456",
+      "name": "Bob Smith",
+      "role": "manager",
+      "employeeId": "2"
+    },
+    {
+      "id": "4",
+      "email": "iris.chen@company.com",
+      "password": "hr123456",
+      "name": "Iris Chen",
+      "role": "hr_admin",
+      "employeeId": "9"
+    },
+    {
+      "id": "5",
+      "email": "karen.adams@company.com",
+      "password": "mgr123456",
+      "name": "Karen Adams",
+      "role": "manager",
+      "employeeId": "11"
+    },
+    {
+      "id": "6",
+      "email": "eva.green@company.com",
+      "password": "emp123456",
+      "name": "Eva Green",
+      "role": "hr_admin",
+      "employeeId": "5"
+    },
+    {
+      "id": "7",
+      "email": "frank.lee@company.com",
+      "password": "emp123456",
+      "name": "Frank Lee",
+      "role": "employee",
+      "employeeId": "6"
+    },
+    {
+      "id": "8",
+      "email": "henry.wilson@company.com",
+      "password": "emp123456",
+      "name": "Henry Wilson",
+      "role": "employee",
+      "employeeId": "8"
+    },
+    {
+      "id": "9",
+      "email": "david.brown@company.com",
+      "password": "emp123456",
+      "name": "David Brown",
+      "role": "employee",
+      "employeeId": "4"
+    },
+    {
+      "id": "J3W3vU9ZXNI",
+      "email": "preethishree@gmail.com",
+      "password": "preethi123",
+      "name": "Preethi Shree B",
+      "role": "employee",
+      "employeeId": "1785517580032"
+    },
+    {
+      "id": "FShAv_6WqzA",
+      "email": "preethi@gmail.com",
+      "password": "preethi123",
+      "name": "Preethi",
+      "role": "employee",
+      "employeeId": "NErkkbd41UI"
+    }
+  ],
+  "leaveRequests": [
+    {
+      "id": "1",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "type": "Annual",
+      "from": "2026-08-01",
+      "to": "2026-08-03",
+      "days": 3,
+      "reason": "Family vacation",
+      "status": "Pending",
+      "managerId": "2",
+      "appliedOn": "2026-07-25"
+    },
+    {
+      "id": "2",
+      "employeeId": "5",
+      "employeeName": "Eva Green",
+      "type": "Sick",
+      "from": "2026-07-28",
+      "to": "2026-07-29",
+      "days": 2,
+      "reason": "Fever and cold",
+      "status": "Approved",
+      "managerId": "2",
+      "appliedOn": "2026-07-27"
+    },
+    {
+      "id": "3",
+      "employeeId": "6",
+      "employeeName": "Frank Lee",
+      "type": "Casual",
+      "from": "2026-08-10",
+      "to": "2026-08-10",
+      "days": 1,
+      "reason": "Personal work",
+      "status": "Pending",
+      "managerId": "2",
+      "appliedOn": "2026-07-30"
+    },
+    {
+      "id": "4",
+      "employeeId": "8",
+      "employeeName": "Henry Wilson",
+      "type": "Annual",
+      "from": "2026-09-01",
+      "to": "2026-09-05",
+      "days": 5,
+      "reason": "Holiday trip",
+      "status": "Rejected",
+      "managerId": "2",
+      "appliedOn": "2026-07-20"
+    },
+    {
+      "id": "5",
+      "employeeId": "4",
+      "employeeName": "David Brown",
+      "type": "Casual",
+      "from": "2026-08-05",
+      "to": "2026-08-05",
+      "days": 1,
+      "reason": "Doctor appointment",
+      "status": "Pending",
+      "managerId": "2",
+      "appliedOn": "2026-07-31"
+    },
+    {
+      "type": "Casual",
+      "from": "2026-07-01",
+      "to": "2026-07-02",
+      "reason": "Personal",
+      "days": 2,
+      "id": "7F3kWSpkSrI",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "managerId": "2",
+      "status": "Approved",
+      "appliedOn": "2026-07-31"
+    },
+    {
+      "type": "Annual",
+      "from": "2026-07-01",
+      "to": "2026-07-31",
+      "reason": "Annual Vacation",
+      "days": 31,
+      "id": "Hhx5dYmEMTY",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "managerId": "2",
+      "status": "Rejected",
+      "appliedOn": "2026-07-31"
+    },
+    {
+      "id": "vd1YiP6ENok",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "type": "Sick",
+      "from": "2026-07-10",
+      "to": "2026-07-14",
+      "days": 5,
+      "reason": "Viral Fever",
+      "managerId": "2",
+      "status": "Pending",
+      "appliedOn": "2026-07-31"
+    },
+    {
+      "id": "wXRnAWnPfEU",
+      "employeeId": "1785517580032",
+      "employeeName": "Preethi Shree B",
+      "type": "Sick",
+      "from": "2026-07-01",
+      "to": "2026-07-09",
+      "days": 9,
+      "reason": "Typhoid",
+      "managerId": "2",
+      "status": "Pending",
+      "appliedOn": "2026-07-31"
+    }
+  ],
+  "payslips": [
+    {
+      "id": "1",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "department": "Engineering",
+      "designation": "Senior Engineer",
+      "month": "June 2026",
+      "year": 2026,
+      "payPeriod": "June 1 - June 30, 2026",
+      "workDays": 22,
+      "pan": "ABCDE1234F",
+      "uan": "100123456789",
+      "bankName": "Chase Bank",
+      "bankAccount": "XXXX XXXX 4521",
+      "companyName": "Acme Corporation",
+      "companyAddress": "100 Corporate Park, New York, NY 10001",
+      "basicSalary": 95000,
+      "hra": 9500,
+      "specialAllowance": 5000,
+      "bonus": 2000,
+      "overtimePay": 1200,
+      "earnings": 112700,
+      "incomeTax": 12000,
+      "pf": 4000,
+      "professionalTax": 200,
+      "healthInsurance": 1500,
+      "otherDeductions": 500,
+      "totalDeductions": 18200,
+      "grossEarnings": 112700,
+      "netPay": 94500,
+      "status": "Paid",
+      "generatedOn": "2026-07-01"
+    },
+    {
+      "id": "2",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "department": "Engineering",
+      "designation": "Senior Engineer",
+      "month": "May 2026",
+      "year": 2026,
+      "payPeriod": "May 1 - May 31, 2026",
+      "workDays": 23,
+      "pan": "ABCDE1234F",
+      "uan": "100123456789",
+      "bankName": "Chase Bank",
+      "bankAccount": "XXXX XXXX 4521",
+      "companyName": "Acme Corporation",
+      "companyAddress": "100 Corporate Park, New York, NY 10001",
+      "basicSalary": 95000,
+      "hra": 9500,
+      "specialAllowance": 5000,
+      "bonus": 0,
+      "overtimePay": 800,
+      "earnings": 110300,
+      "incomeTax": 12000,
+      "pf": 4000,
+      "professionalTax": 200,
+      "healthInsurance": 1500,
+      "otherDeductions": 0,
+      "totalDeductions": 17700,
+      "grossEarnings": 110300,
+      "netPay": 92600,
+      "status": "Paid",
+      "generatedOn": "2026-06-01"
+    },
+    {
+      "id": "3",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "department": "Engineering",
+      "designation": "Senior Engineer",
+      "month": "April 2026",
+      "year": 2026,
+      "payPeriod": "April 1 - April 30, 2026",
+      "workDays": 22,
+      "pan": "ABCDE1234F",
+      "uan": "100123456789",
+      "bankName": "Chase Bank",
+      "bankAccount": "XXXX XXXX 4521",
+      "companyName": "Acme Corporation",
+      "companyAddress": "100 Corporate Park, New York, NY 10001",
+      "basicSalary": 95000,
+      "hra": 9500,
+      "specialAllowance": 5000,
+      "bonus": 0,
+      "overtimePay": 0,
+      "earnings": 109500,
+      "incomeTax": 12000,
+      "pf": 4000,
+      "professionalTax": 200,
+      "healthInsurance": 1500,
+      "otherDeductions": 0,
+      "totalDeductions": 17700,
+      "grossEarnings": 109500,
+      "netPay": 91800,
+      "status": "Paid",
+      "generatedOn": "2026-05-01"
+    },
+    {
+      "id": "4",
+      "employeeId": "5",
+      "employeeName": "Eva Green",
+      "department": "Engineering",
+      "designation": "Frontend Developer",
+      "month": "June 2026",
+      "year": 2026,
+      "payPeriod": "June 1 - June 30, 2026",
+      "workDays": 22,
+      "pan": "EFGHI5678J",
+      "uan": "100567890123",
+      "bankName": "US Bank",
+      "bankAccount": "XXXX XXXX 9920",
+      "companyName": "Acme Corporation",
+      "companyAddress": "100 Corporate Park, New York, NY 10001",
+      "basicSalary": 88000,
+      "hra": 8800,
+      "specialAllowance": 4500,
+      "bonus": 1500,
+      "overtimePay": 0,
+      "earnings": 102800,
+      "incomeTax": 11000,
+      "pf": 3700,
+      "professionalTax": 200,
+      "healthInsurance": 1500,
+      "otherDeductions": 0,
+      "totalDeductions": 16400,
+      "grossEarnings": 102800,
+      "netPay": 86400,
+      "status": "Paid",
+      "generatedOn": "2026-07-01"
+    },
+    {
+      "id": "5",
+      "employeeId": "6",
+      "employeeName": "Frank Lee",
+      "department": "Sales",
+      "designation": "Sales Executive",
+      "month": "June 2026",
+      "year": 2026,
+      "payPeriod": "June 1 - June 30, 2026",
+      "workDays": 22,
+      "pan": "FGHIJ6789K",
+      "uan": "100678901234",
+      "bankName": "PNC Bank",
+      "bankAccount": "XXXX XXXX 1187",
+      "companyName": "Acme Corporation",
+      "companyAddress": "100 Corporate Park, New York, NY 10001",
+      "basicSalary": 78000,
+      "hra": 7800,
+      "specialAllowance": 4000,
+      "bonus": 3500,
+      "overtimePay": 0,
+      "earnings": 93300,
+      "incomeTax": 9800,
+      "pf": 3200,
+      "professionalTax": 200,
+      "healthInsurance": 1200,
+      "otherDeductions": 0,
+      "totalDeductions": 14400,
+      "grossEarnings": 93300,
+      "netPay": 78900,
+      "status": "Paid",
+      "generatedOn": "2026-07-01"
+    },
+    {
+      "id": "6",
+      "employeeId": "8",
+      "employeeName": "Henry Wilson",
+      "department": "Marketing",
+      "designation": "Content Strategist",
+      "month": "June 2026",
+      "year": 2026,
+      "payPeriod": "June 1 - June 30, 2026",
+      "workDays": 22,
+      "pan": "HIJKL8901M",
+      "uan": "100890123456",
+      "bankName": "KeyBank",
+      "bankAccount": "XXXX XXXX 8871",
+      "companyName": "Acme Corporation",
+      "companyAddress": "100 Corporate Park, New York, NY 10001",
+      "basicSalary": 75000,
+      "hra": 7500,
+      "specialAllowance": 3800,
+      "bonus": 1000,
+      "overtimePay": 0,
+      "earnings": 87300,
+      "incomeTax": 9200,
+      "pf": 3100,
+      "professionalTax": 200,
+      "healthInsurance": 1200,
+      "otherDeductions": 500,
+      "totalDeductions": 14200,
+      "grossEarnings": 87300,
+      "netPay": 73100,
+      "status": "Paid",
+      "generatedOn": "2026-07-01"
+    },
+    {
+      "id": "7",
+      "employeeId": "4",
+      "employeeName": "David Brown",
+      "department": "Finance",
+      "designation": "Financial Analyst",
+      "month": "June 2026",
+      "year": 2026,
+      "payPeriod": "June 1 - June 30, 2026",
+      "workDays": 22,
+      "pan": "DEFGH4567I",
+      "uan": "100456789012",
+      "bankName": "Citibank",
+      "bankAccount": "XXXX XXXX 6614",
+      "companyName": "Acme Corporation",
+      "companyAddress": "100 Corporate Park, New York, NY 10001",
+      "basicSalary": 85000,
+      "hra": 8500,
+      "specialAllowance": 4200,
+      "bonus": 0,
+      "overtimePay": 600,
+      "earnings": 98300,
+      "incomeTax": 10500,
+      "pf": 3600,
+      "professionalTax": 200,
+      "healthInsurance": 1500,
+      "otherDeductions": 0,
+      "totalDeductions": 15800,
+      "grossEarnings": 98300,
+      "netPay": 82500,
+      "status": "Paid",
+      "generatedOn": "2026-07-01"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "1",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "date": "2026-07-31",
+      "checkIn": "09:02",
+      "checkOut": "18:10",
+      "status": "Present",
+      "shift": "Morning"
+    },
+    {
+      "id": "2",
+      "employeeId": "2",
+      "employeeName": "Bob Smith",
+      "date": "2026-07-31",
+      "checkIn": "08:55",
+      "checkOut": "18:00",
+      "status": "Present",
+      "shift": "Morning"
+    },
+    {
+      "id": "3",
+      "employeeId": "3",
+      "employeeName": "Carol White",
+      "date": "2026-07-31",
+      "checkIn": null,
+      "checkOut": null,
+      "status": "Absent",
+      "shift": "Morning"
+    },
+    {
+      "id": "4",
+      "employeeId": "4",
+      "employeeName": "David Brown",
+      "date": "2026-07-31",
+      "checkIn": "09:30",
+      "checkOut": "18:30",
+      "status": "Late",
+      "shift": "Morning"
+    },
+    {
+      "id": "5",
+      "employeeId": "5",
+      "employeeName": "Eva Green",
+      "date": "2026-07-31",
+      "checkIn": "09:00",
+      "checkOut": "18:00",
+      "status": "Present",
+      "shift": "Morning"
+    },
+    {
+      "id": "6",
+      "employeeId": "6",
+      "employeeName": "Frank Lee",
+      "date": "2026-07-31",
+      "checkIn": "09:05",
+      "checkOut": "18:05",
+      "status": "Present",
+      "shift": "Morning"
+    },
+    {
+      "id": "7",
+      "employeeId": "7",
+      "employeeName": "Grace Kim",
+      "date": "2026-07-31",
+      "checkIn": null,
+      "checkOut": null,
+      "status": "On Leave",
+      "shift": "Morning"
+    },
+    {
+      "id": "8",
+      "employeeId": "8",
+      "employeeName": "Henry Wilson",
+      "date": "2026-07-31",
+      "checkIn": "09:10",
+      "checkOut": "17:50",
+      "status": "Present",
+      "shift": "Morning"
+    },
+    {
+      "id": "9",
+      "employeeId": "9",
+      "employeeName": "Iris Chen",
+      "date": "2026-07-31",
+      "checkIn": "08:50",
+      "checkOut": "18:00",
+      "status": "Present",
+      "shift": "Morning"
+    },
+    {
+      "id": "10",
+      "employeeId": null,
+      "employeeName": "Jack Turner",
+      "date": "2026-07-31",
+      "checkIn": "09:00",
+      "checkOut": "18:00",
+      "status": "Present",
+      "shift": "Morning"
+    },
+    {
+      "id": "11",
+      "employeeId": "11",
+      "employeeName": "Karen Adams",
+      "date": "2026-07-31",
+      "checkIn": "08:45",
+      "checkOut": "17:45",
+      "status": "Present",
+      "shift": "Morning"
+    },
+    {
+      "id": "12",
+      "employeeId": null,
+      "employeeName": "Leo Martinez",
+      "date": "2026-07-31",
+      "checkIn": null,
+      "checkOut": null,
+      "status": "Absent",
+      "shift": "Morning"
+    }
+  ],
+  "performanceReviews": [
+    {
+      "id": "1",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "reviewerId": "3",
+      "reviewerName": "Bob Smith",
+      "period": "Q2 2026",
+      "goals": "Deliver auth module, improve CI pipeline",
+      "rating": 4,
+      "feedback": "Excellent work on the auth module. Consistently meets deadlines.",
+      "status": "Completed",
+      "reviewedOn": "2026-07-15"
+    },
+    {
+      "id": "2",
+      "employeeId": "5",
+      "employeeName": "Eva Green",
+      "reviewerId": "3",
+      "reviewerName": "Bob Smith",
+      "period": "Q2 2026",
+      "goals": "Complete dashboard redesign",
+      "rating": 5,
+      "feedback": "Outstanding. Dashboard was delivered ahead of schedule.",
+      "status": "Completed",
+      "reviewedOn": "2026-07-16"
+    },
+    {
+      "id": "3",
+      "employeeId": "6",
+      "employeeName": "Frank Lee",
+      "reviewerId": "3",
+      "reviewerName": "Bob Smith",
+      "period": "Q2 2026",
+      "goals": "Increase quarterly sales by 15%",
+      "rating": 3,
+      "feedback": "Good progress but targets were partially met.",
+      "status": "Completed",
+      "reviewedOn": "2026-07-17"
+    },
+    {
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "period": "Q3 2026",
+      "goals": "Project Completed",
+      "rating": 4,
+      "feedback": "Good. Keep it Up",
+      "id": "Z4XQnZern9I",
+      "reviewerId": "2",
+      "reviewerName": "Bob Smith",
+      "status": "Completed",
+      "reviewedOn": "2026-07-31"
+    },
+    {
+      "id": "OS-euyHicmc",
+      "employeeId": "OcTrG-quk7A",
+      "employeeName": "Jayanthan Krish",
+      "period": "Q3 2026",
+      "goals": "Done all the sprints with in the due time",
+      "rating": 5,
+      "feedback": "Good Performance ",
+      "reviewerId": "2",
+      "reviewerName": "Bob Smith",
+      "status": "Completed",
+      "reviewedOn": "2026-07-31"
+    }
+  ],
+  "onboarding": [
+    {
+      "id": "1",
+      "name": "Mia Roberts",
+      "email": "mia.roberts@company.com",
+      "department": "Engineering",
+      "jobTitle": "Junior Developer",
+      "startDate": "2026-08-01",
+      "status": "In Progress",
+      "documentsSubmitted": [
+        "ID Proof",
+        "Offer Letter"
+      ],
+      "documentsRequired": [
+        "ID Proof",
+        "Offer Letter",
+        "Bank Details",
+        "Education Certificate"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Noah Davis",
+      "email": "noah.davis@company.com",
+      "department": "Sales",
+      "jobTitle": "Sales Representative",
+      "startDate": "2026-08-15",
+      "status": "Completed",
+      "documentsSubmitted": [
+        "ID Proof",
+        "Offer Letter",
+        "Bank Details"
+      ],
+      "documentsRequired": [
+        "ID Proof",
+        "Offer Letter",
+        "Bank Details"
+      ]
+    },
+    {
+      "name": "Jayanthan Krish",
+      "email": "Krish@gmail.com",
+      "department": "Engineering",
+      "jobTitle": "Senior Developer",
+      "startDate": "2026-07-24",
+      "documentsRequired": [
+        "ID Proof",
+        "Offer Letter",
+        "Bank Details",
+        "Education Certificate",
+        "Background Check"
+      ],
+      "id": "tC_HOJTlcS4",
+      "status": "Completed",
+      "documentsSubmitted": [
+        "ID Proof",
+        "Offer Letter",
+        "Bank Details",
+        "Education Certificate",
+        "Background Check"
+      ]
+    }
+  ],
+  "payroll": [
+    {
+      "id": "1",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "department": "Engineering",
+      "basicSalary": 95000,
+      "hra": 9500,
+      "allowances": 5000,
+      "bonus": 2000,
+      "deductions": "7000",
+      "tax": "12000",
+      "netPay": 92500,
+      "effectiveFrom": "2022-03-15",
+      "lastUpdated": "2026-07-31"
+    },
+    {
+      "id": "2",
+      "employeeId": "2",
+      "employeeName": "Bob Smith",
+      "department": "Marketing",
+      "basicSalary": 110000,
+      "hra": 11000,
+      "allowances": 6000,
+      "bonus": 3000,
+      "deductions": 9500,
+      "tax": 15000,
+      "netPay": 105500,
+      "effectiveFrom": "2021-07-01",
+      "lastUpdated": "2026-01-01"
+    },
+    {
+      "id": "3",
+      "employeeId": "9",
+      "employeeName": "Iris Chen",
+      "department": "HR",
+      "basicSalary": 105000,
+      "hra": 10500,
+      "allowances": 5500,
+      "bonus": 2500,
+      "deductions": 9000,
+      "tax": 14000,
+      "netPay": 100500,
+      "effectiveFrom": "2022-08-30",
+      "lastUpdated": "2026-01-01"
+    }
+  ],
+  "systemConfig": [
+    {
+      "id": "1",
+      "key": "company_name",
+      "value": "Acme Corporation",
+      "category": "General",
+      "description": "Official company name"
+    },
+    {
+      "id": "2",
+      "key": "work_hours_per_day",
+      "value": "8",
+      "category": "Work Policy",
+      "description": "Standard working hours per day"
+    },
+    {
+      "id": "3",
+      "key": "annual_leave_days",
+      "value": "21",
+      "category": "Leave Policy",
+      "description": "Annual leave entitlement per employee"
+    },
+    {
+      "id": "4",
+      "key": "session_timeout_minutes",
+      "value": "30",
+      "category": "Security",
+      "description": "Auto logout after inactivity"
+    },
+    {
+      "id": "5",
+      "key": "password_min_length",
+      "value": "8",
+      "category": "Security",
+      "description": "Minimum password length"
+    },
+    {
+      "id": "6",
+      "key": "mfa_enabled",
+      "value": "false",
+      "category": "Security",
+      "description": "Enable multi-factor authentication"
+    },
+    {
+      "id": "7",
+      "key": "work_locations",
+      "value": "New York, San Francisco, Remote",
+      "category": "General",
+      "description": "Available work locations"
+    }
+  ],
+  "backupLogs": [
+    {
+      "id": "1",
+      "type": "Full Backup",
+      "status": "Success",
+      "size": "245 MB",
+      "duration": "3m 12s",
+      "initiatedBy": "System",
+      "timestamp": "2026-07-31T02:00:00"
+    },
+    {
+      "id": "2",
+      "type": "Incremental Backup",
+      "status": "Success",
+      "size": "18 MB",
+      "duration": "0m 45s",
+      "initiatedBy": "System",
+      "timestamp": "2026-07-30T02:00:00"
+    },
+    {
+      "id": "3",
+      "type": "Full Backup",
+      "status": "Failed",
+      "size": null,
+      "duration": null,
+      "initiatedBy": "admin@company.com",
+      "timestamp": "2026-07-29T02:00:00"
+    },
+    {
+      "id": "4",
+      "type": "Incremental Backup",
+      "status": "Success",
+      "size": "22 MB",
+      "duration": "0m 52s",
+      "initiatedBy": "System",
+      "timestamp": "2026-07-28T02:00:00"
+    },
+    {
+      "id": "ViEFeTi_OIY",
+      "type": "Incremental Backup",
+      "status": "Success",
+      "size": "15 MB",
+      "duration": "0m 41s",
+      "initiatedBy": "admin@company.com",
+      "timestamp": "2026-07-31T10:01:11.153Z"
+    },
+    {
+      "id": "6OAjeOqd08E",
+      "type": "Full Backup",
+      "status": "Success",
+      "size": "248 MB",
+      "duration": "3m 08s",
+      "initiatedBy": "admin@company.com",
+      "timestamp": "2026-07-31T10:01:14.600Z"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "1",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "category": "Travel",
+      "description": "Flight to SF conference",
+      "amount": 650,
+      "date": "2026-07-20",
+      "receipt": "receipt_001.pdf",
+      "status": "Pending",
+      "managerId": "2",
+      "submittedOn": "2026-07-21"
+    },
+    {
+      "id": "2",
+      "employeeId": "5",
+      "employeeName": "Eva Green",
+      "category": "Equipment",
+      "description": "Mechanical keyboard",
+      "amount": 180,
+      "date": "2026-07-18",
+      "receipt": "receipt_002.pdf",
+      "status": "Approved",
+      "managerId": "2",
+      "submittedOn": "2026-07-19"
+    },
+    {
+      "id": "3",
+      "employeeId": "6",
+      "employeeName": "Frank Lee",
+      "category": "Travel",
+      "description": "Client visit cab fare",
+      "amount": 45,
+      "date": "2026-07-25",
+      "receipt": "receipt_003.pdf",
+      "status": "Approved",
+      "managerId": "2",
+      "submittedOn": "2026-07-25",
+      "reviewedOn": "2026-07-31",
+      "reviewedBy": "Bob Smith"
+    },
+    {
+      "id": "4",
+      "employeeId": "8",
+      "employeeName": "Henry Wilson",
+      "category": "Meals",
+      "description": "Team lunch",
+      "amount": 120,
+      "date": "2026-07-22",
+      "receipt": "receipt_004.pdf",
+      "status": "Rejected",
+      "managerId": "2",
+      "submittedOn": "2026-07-22"
+    },
+    {
+      "id": "Di0xXkEdEQE",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "managerId": "2",
+      "category": "Meals",
+      "amount": 1000,
+      "date": "2026-07-31",
+      "description": "Team Lunch",
+      "status": "Approved",
+      "submittedOn": "2026-07-31",
+      "reviewedOn": "2026-07-31",
+      "reviewedBy": "Bob Smith"
+    },
+    {
+      "id": "IxLvBrZolW4",
+      "employeeId": "1785517580032",
+      "employeeName": "Preethi Shree B",
+      "managerId": "2",
+      "category": "Training",
+      "amount": 12000,
+      "date": "2026-12-06",
+      "description": "Accomodation",
+      "status": "Pending",
+      "submittedOn": "2026-07-31"
+    }
+  ],
+  "hiringPipeline": [
+    {
+      "id": "1",
+      "role": "Senior React Developer",
+      "department": "Engineering",
+      "postedDate": "2026-07-01",
+      "applicants": [
+        {
+          "name": "Sam Wilson",
+          "email": "sam.wilson@email.com",
+          "stage": "Technical Interview",
+          "resumeUrl": "#",
+          "rating": 4,
+          "feedback": ""
+        },
+        {
+          "name": "Priya Patel",
+          "email": "priya.patel@email.com",
+          "stage": "HR Screen",
+          "resumeUrl": "#",
+          "rating": 3,
+          "feedback": "Good communication skills"
+        }
+      ],
+      "status": "Active",
+      "hiringManagerId": "2"
+    },
+    {
+      "id": "2",
+      "role": "Sales Associate",
+      "department": "Sales",
+      "postedDate": "2026-07-15",
+      "applicants": [
+        {
+          "name": "Carlos Gomez",
+          "email": "carlos.gomez@email.com",
+          "stage": "Offer",
+          "resumeUrl": "#",
+          "rating": 5,
+          "feedback": "Exceptional candidate"
+        }
+      ],
+      "status": "Active",
+      "hiringManagerId": "2"
+    },
+    {
+      "id": "zRV7C2d3Ibk",
+      "role": "Senior HR",
+      "department": "Engineering",
+      "postedDate": "2026-07-31",
+      "applicants": [
+        {
+          "name": "Preethi",
+          "email": "preethi@gmail.com",
+          "stage": "Offer",
+          "resumeUrl": "#",
+          "rating": 3,
+          "feedback": "Good"
+        }
+      ],
+      "status": "Active",
+      "hiringManagerId": "2"
+    }
+  ],
+  "offboarding": [
+    {
+      "id": "1",
+      "employeeId": "7",
+      "employeeName": "Grace Kim",
+      "lastDay": "2026-08-15",
+      "reason": "Resignation",
+      "tasks": [
+        {
+          "label": "Exit Interview",
+          "done": false
+        },
+        {
+          "label": "Return Laptop",
+          "done": true
+        },
+        {
+          "label": "Revoke System Access",
+          "done": false
+        },
+        {
+          "label": "Knowledge Transfer Doc",
+          "done": false
+        },
+        {
+          "label": "Final Settlement",
+          "done": true
+        }
+      ],
+      "managerId": "2",
+      "status": "In Progress"
+    },
+    {
+      "id": "VNjZ3gNEqSs",
+      "employeeId": null,
+      "employeeName": "Jack Turner",
+      "managerId": "2",
+      "lastDay": "2026-07-31",
+      "reason": "Termination",
+      "tasks": [
+        {
+          "label": "Exit Interview",
+          "done": true
+        },
+        {
+          "label": "Return Laptop & Equipment",
+          "done": true
+        },
+        {
+          "label": "Revoke System Access",
+          "done": true
+        },
+        {
+          "label": "Knowledge Transfer Document",
+          "done": true
+        },
+        {
+          "label": "Final Settlement",
+          "done": true
+        },
+        {
+          "label": "Clear Dues & Loans",
+          "done": true
+        },
+        {
+          "label": "ID Card & Access Card Return",
+          "done": true
+        },
+        {
+          "label": "Relieving Letter Issued",
+          "done": true
+        }
+      ],
+      "status": "Completed",
+      "initiatedOn": "2026-07-31"
+    },
+    {
+      "id": "Jw3EzEk8L64",
+      "employeeId": null,
+      "employeeName": "Preethi Shree B",
+      "managerId": "2",
+      "lastDay": "2026-07-31",
+      "reason": "Resignation",
+      "tasks": [
+        {
+          "label": "Exit Interview",
+          "done": true
+        },
+        {
+          "label": "Return Laptop & Equipment",
+          "done": true
+        },
+        {
+          "label": "Revoke System Access",
+          "done": true
+        },
+        {
+          "label": "Knowledge Transfer Document",
+          "done": true
+        },
+        {
+          "label": "Final Settlement",
+          "done": true
+        },
+        {
+          "label": "Clear Dues & Loans",
+          "done": true
+        },
+        {
+          "label": "ID Card & Access Card Return",
+          "done": true
+        },
+        {
+          "label": "Relieving Letter Issued",
+          "done": true
+        }
+      ],
+      "status": "Completed",
+      "initiatedOn": "2026-07-31"
+    }
+  ],
+  "skills": [
+    {
+      "id": "1",
+      "employeeId": "1",
+      "employeeName": "Alice Johnson",
+      "skills": [
+        {
+          "name": "React",
+          "level": "Expert",
+          "certified": true
+        },
+        {
+          "name": "Node.js",
+          "level": "Intermediate",
+          "certified": false
+        },
+        {
+          "name": "AWS",
+          "level": "Beginner",
+          "certified": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "employeeId": "5",
+      "employeeName": "Eva Green",
+      "skills": [
+        {
+          "name": "React",
+          "level": "Expert",
+          "certified": true
+        },
+        {
+          "name": "TypeScript",
+          "level": "Advanced",
+          "certified": true
+        },
+        {
+          "name": "Figma",
+          "level": "Intermediate",
+          "certified": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "employeeId": "6",
+      "employeeName": "Frank Lee",
+      "skills": [
+        {
+          "name": "Salesforce",
+          "level": "Advanced",
+          "certified": true
+        },
+        {
+          "name": "Excel",
+          "level": "Expert",
+          "certified": false
+        },
+        {
+          "name": "SQL",
+          "level": "Intermediate",
+          "certified": false
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "employeeId": "8",
+      "employeeName": "Henry Wilson",
+      "skills": [
+        {
+          "name": "Content Strategy",
+          "level": "Expert",
+          "certified": true
+        },
+        {
+          "name": "SEO",
+          "level": "Advanced",
+          "certified": false
+        },
+        {
+          "name": "HubSpot",
+          "level": "Intermediate",
+          "certified": true
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
