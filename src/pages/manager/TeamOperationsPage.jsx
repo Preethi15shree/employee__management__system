@@ -35,7 +35,7 @@ export default function TeamOperationsPage() {
     ]).then(([empRes, attRes]) => {
       // Show all employees across all dashboards
       const allTeam = empRes.data;
-      const allTeamIds = allTeam.map(e => String(e.id));
+      const allTeamIds = allTeam.map(e => String(e._id));
       const allAtt = attRes.data.filter(a => allTeamIds.includes(String(a.employeeId)));
       setTeam(allTeam);
       setAllAttendance(allAtt);
@@ -43,7 +43,7 @@ export default function TeamOperationsPage() {
       setAttendance(allAtt.filter(a => a.date === selectedDate));
       // Init shifts
       const s = {};
-      allTeam.forEach(e => { s[e.id] = e.currentShift || SHIFTS[0]; });
+      allTeam.forEach(e => { s[e._id] = e.currentShift || SHIFTS[0]; });
       setShifts(s);
     }).catch(() => toast.error('Failed to load data'))
       .finally(() => { setLoading(false); setRefreshing(false); });
@@ -58,7 +58,7 @@ export default function TeamOperationsPage() {
 
   async function saveShift(emp) {
     try {
-      await api.patch('/employees/' + emp.id, { currentShift: shifts[emp.id] });
+      await api.patch('/employees/' + emp._id, { currentShift: shifts[emp._id] });
       toast.success('Shift updated for ' + emp.name);
     } catch { toast.error('Failed to save shift'); }
   }
@@ -79,9 +79,9 @@ export default function TeamOperationsPage() {
   };
 
   // Team members with no attendance record for selected date
-  const teamIds = team.map(e => String(e.id));
+  const teamIds = team.map(e => String(e._id));
   const presentIds = attendance.map(a => String(a.employeeId));
-  const absentMembers = team.filter(e => !presentIds.includes(String(e.id)));
+  const absentMembers = team.filter(e => !presentIds.includes(String(e._id)));
 
   if (loading) return <div className="text-center text-gray-500 py-20">Loading team operations…</div>;
 
@@ -139,9 +139,9 @@ export default function TeamOperationsPage() {
                 <tbody className="divide-y divide-gray-50">
                   {attendance.map(a => {
                     const hrs = calcHours(a.checkIn, a.checkOut);
-                    const emp = team.find(e => String(e.id) === String(a.employeeId));
+                      const emp = team.find(e => String(e._id) === String(a.employeeId));
                     return (
-                      <tr key={a.id} className="hover:bg-gray-50">
+                      <tr key={a._id} className="hover:bg-gray-50">
                         <td className="px-4 py-3">
                           <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-xs font-bold text-emerald-700">{a.employeeName.charAt(0)}</div>
@@ -161,7 +161,7 @@ export default function TeamOperationsPage() {
                     );
                   })}
                   {absentMembers.map(emp => (
-                    <tr key={'absent-' + emp.id} className="hover:bg-red-50/30">
+                    <tr key={'absent-' + emp._id} className="hover:bg-red-50/30">
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-2">
                           <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-xs font-bold text-red-600">{emp.name.charAt(0)}</div>
@@ -201,7 +201,7 @@ export default function TeamOperationsPage() {
                 {team.length === 0 ? (
                   <tr><td colSpan={6} className="text-center text-gray-400 py-12">No team members found</td></tr>
                 ) : team.map(emp => (
-                  <tr key={emp.id} className="hover:bg-gray-50">
+                  <tr key={emp._id} className="hover:bg-gray-50">
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-2">
                         <div className="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-emerald-700">{emp.name.charAt(0)}</div>
@@ -215,8 +215,8 @@ export default function TeamOperationsPage() {
                     </td>
                     <td className="px-4 py-3">
                       <select
-                        value={shifts[emp.id] || SHIFTS[0]}
-                        onChange={e => setShifts(p => ({ ...p, [emp.id]: e.target.value }))}
+                      value={shifts[emp._id] || SHIFTS[0]}
+                        onChange={e => setShifts(p => ({ ...p, [emp._id]: e.target.value }))}
                         className="border border-gray-300 rounded-lg px-2.5 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                       >
                         {SHIFTS.map(s => <option key={s}>{s}</option>)}

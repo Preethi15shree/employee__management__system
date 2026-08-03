@@ -1,0 +1,12 @@
+{"email":"admin@company.com","password":"$2a$10$v64LmQXnV6PZBlsovnwTPeaNmIwPtJgcybvx1ZEMWvKBY8cDqV41K","name":"Admin User","role":"system_admin","employeeId":null,"_id":"1"}
+{"email":"alice.johnson@company.com","password":"$2a$10$yM8p9ogK12gGbqc3NSiCCeaR6UxXS1ZX00qY5NTw/ZXHG9prt1jZ6","name":"Alice Johnson","role":"employee","employeeId":"1","_id":"2"}
+{"email":"bob.smith@company.com","password":"$2a$10$PPwS48sFIfVkSiA4tMl73us2CEeXUCUFC1in5TMLCeZMCIweW.z16","name":"Bob Smith","role":"manager","employeeId":"2","_id":"3"}
+{"email":"iris.chen@company.com","password":"$2a$10$fQGvK43ygkz/peJdEwxnGODBh8lDFtP4azPy5kOtDuIpLWAOM/.kS","name":"Iris Chen","role":"hr_admin","employeeId":"9","_id":"4"}
+{"email":"karen.adams@company.com","password":"$2a$10$LE6Z.1UZYAH6QXBVTpiAfOk9ky2JS74Wf3rycw3xPjNBdYKv8Wl/e","name":"Karen Adams","role":"manager","employeeId":"11","_id":"5"}
+{"email":"eva.green@company.com","password":"$2a$10$Qrg6c8BWsaqOOCRun04TfOhVo4ksWMRvKPDrUS2gNLNT7kJQjzKtq","name":"Eva Green","role":"hr_admin","employeeId":"5","_id":"6"}
+{"email":"frank.lee@company.com","password":"$2a$10$irMA1XeXMwWQ.sJiFKlnkuADjr0sqbhKK8iOVSeBAHHOgvd8aFyUC","name":"Frank Lee","role":"employee","employeeId":"6","_id":"7"}
+{"email":"henry.wilson@company.com","password":"$2a$10$lP25.NQeGEwBFff7gNdKmuWY7wRpvZ4FCwSnTHsHDhlVzN0rBwhq2","name":"Henry Wilson","role":"employee","employeeId":"8","_id":"8"}
+{"email":"david.brown@company.com","password":"$2a$10$GpCdGZu9CuL6Jn6WsaVll.hkD/PIzlG/Rd8/5yl4mZaEC0RdRvqC6","name":"David Brown","role":"employee","employeeId":"4","_id":"9"}
+{"email":"preethi@gmail.com","password":"$2a$10$19tQ2Dn4llgkFdJw11xQz.LI3DXmROT8G7ki8v8UYTwxxqCLEn2BK","name":"Preethi","role":"employee","employeeId":"NErkkbd41UI","_id":"FShAv_6WqzA"}
+{"email":"preethishree@gmail.com","password":"$2a$10$lWjkgjkr1MOs1gf.tSwtdeWjKSQd13EulkBjxGDoe/3vfdNKTRea.","name":"Preethi Shree B","role":"employee","employeeId":"1785517580032","_id":"J3W3vU9ZXNI"}
+{"email":"eva.green@company.com","password":"$2a$10$Qrg6c8BWsaqOOCRun04TfOhVo4ksWMRvKPDrUS2gNLNT7kJQjzKtq","name":"Eva Green","role":"employee","employeeId":"5","_id":"6"}

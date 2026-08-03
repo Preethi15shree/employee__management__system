@@ -1,0 +1,6 @@
+{"type":"Full Backup","status":"Success","size":"245 MB","duration":"3m 12s","initiatedBy":"System","timestamp":"2026-07-31T02:00:00","_id":"1"}
+{"type":"Incremental Backup","status":"Success","size":"18 MB","duration":"0m 45s","initiatedBy":"System","timestamp":"2026-07-30T02:00:00","_id":"2"}
+{"type":"Full Backup","status":"Failed","size":null,"duration":null,"initiatedBy":"admin@company.com","timestamp":"2026-07-29T02:00:00","_id":"3"}
+{"type":"Incremental Backup","status":"Success","size":"22 MB","duration":"0m 52s","initiatedBy":"System","timestamp":"2026-07-28T02:00:00","_id":"4"}
+{"type":"Full Backup","status":"Success","size":"248 MB","duration":"3m 08s","initiatedBy":"admin@company.com","timestamp":"2026-07-31T10:01:14.600Z","_id":"6OAjeOqd08E"}
+{"type":"Incremental Backup","status":"Success","size":"15 MB","duration":"0m 41s","initiatedBy":"admin@company.com","timestamp":"2026-07-31T10:01:11.153Z","_id":"ViEFeTi_OIY"}

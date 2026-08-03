@@ -61,10 +61,9 @@ export default function ExpensesPage() {
     try {
       // Get employee to find managerId
       const allEmps = await api.get('/employees');
-      const emp = allEmps.data.find(e => String(e.id) === eid);
+      const emp = allEmps.data.find(e => String(e._id) === eid);
 
       const payload = {
-        id: Date.now().toString(),
         employeeId: eid,
         employeeName: user.name,
         managerId: emp?.managerId ? String(emp.managerId) : '2',
@@ -155,7 +154,7 @@ export default function ExpensesPage() {
                 {expenses.map(exp => {
                   const Icon = STATUS_ICON[exp.status] || Clock;
                   return (
-                    <tr key={exp.id} className="hover:bg-gray-50 transition">
+                    <tr key={exp._id} className="hover:bg-gray-50 transition">
                       <td className="px-4 py-3">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-700">{exp.category}</span>
                       </td>

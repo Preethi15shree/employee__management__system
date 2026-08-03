@@ -97,7 +97,6 @@ export default function WorkflowsPage() {
     setSavingHiring(true);
     try {
       await api.post('/hiringPipeline', {
-        id: Date.now().toString(),
         role: hiringForm.role.trim(),
         department: hiringForm.department,
         postedDate: new Date().toISOString().split('T')[0],
@@ -118,7 +117,7 @@ export default function WorkflowsPage() {
     const fb = (feedbacks[key] || '').trim();
     if (!fb) { toast.error('Please enter feedback before submitting'); return; }
     const rating = ratings[key] || 3;
-    const job = hiring.find(h => h.id === jobId);
+    const job = hiring.find(h => h._id === jobId);
     if (!job) return;
     const updated = [...job.applicants];
     updated[applicantIdx] = { ...updated[applicantIdx], feedback: fb, rating, stage: 'Feedback Submitted' };
@@ -132,7 +131,7 @@ export default function WorkflowsPage() {
   }
 
   async function updateApplicantStage(jobId, applicantIdx, newStage) {
-    const job = hiring.find(h => h.id === jobId);
+    const job = hiring.find(h => h._id === jobId);
     if (!job) return;
     const updated = [...job.applicants];
     updated[applicantIdx] = { ...updated[applicantIdx], stage: newStage };
@@ -158,7 +157,7 @@ export default function WorkflowsPage() {
     : [];
 
   function selectEmployee(emp) {
-    setOffboardForm(p => ({ ...p, employeeId: String(emp.id), employeeName: emp.name }));
+    setOffboardForm(p => ({ ...p, employeeId: String(emp._id), employeeName: emp.name }));
     setEmpSearch(emp.name);
   }
 
@@ -172,7 +171,6 @@ export default function WorkflowsPage() {
     setSavingOffboard(true);
     try {
       await api.post('/offboarding', {
-        id: Date.now().toString(),
         employeeId: offboardForm.employeeId,
         employeeName: offboardForm.employeeName,
         managerId: mid,
@@ -195,11 +193,11 @@ export default function WorkflowsPage() {
     const tasks = record.tasks.map((t, i) => i === idx ? { ...t, done: !t.done } : t);
     const allDone = tasks.every(t => t.done);
     try {
-      await api.patch('/offboarding/' + record.id, { tasks, status: allDone ? 'Completed' : 'In Progress' });
+      await api.patch('/offboarding/' + record._id, { tasks, status: allDone ? 'Completed' : 'In Progress' });
       if (allDone) {
-        const emp = employees.find(e => String(e.id) === String(record.employeeId));
+        const emp = employees.find(e => String(e._id) === String(record.employeeId));
         if (emp) {
-          await api.delete('/employees/' + emp.id);
+          await api.delete('/employees/' + emp._id);
           toast.success(record.employeeName + "'s offboarding completed & removed from employees");
         } else {
           toast.success(record.employeeName + "'s offboarding completed!");
@@ -247,7 +245,7 @@ export default function WorkflowsPage() {
               <p className="font-medium text-gray-600">No expense requests yet</p>
             </div>
           ) : expenses.sort((a, b) => (b.submittedOn || '').localeCompare(a.submittedOn || '')).map(exp => (
-            <div key={exp.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+            <div key={exp._id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -265,10 +263,10 @@ export default function WorkflowsPage() {
                   <span className="text-2xl font-bold text-gray-900">₹{Number(exp.amount || 0).toLocaleString('en-IN')}</span>
                   {exp.status === 'Pending' && (
                     <div className="flex gap-2">
-                      <button disabled={updating === exp.id} onClick={() => updateExpense(exp.id, 'Approved')} className="flex items-center gap-1.5 bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg text-sm font-medium disabled:opacity-60">
+                      <button disabled={updating === exp._id} onClick={() => updateExpense(exp._id, 'Approved')} className="flex items-center gap-1.5 bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg text-sm font-medium disabled:opacity-60">
                         <CheckCircle className="w-4 h-4" /> Approve
                       </button>
-                      <button disabled={updating === exp.id} onClick={() => updateExpense(exp.id, 'Rejected')} className="flex items-center gap-1.5 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg text-sm font-medium disabled:opacity-60">
+                      <button disabled={updating === exp._id} onClick={() => updateExpense(exp._id, 'Rejected')} className="flex items-center gap-1.5 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg text-sm font-medium disabled:opacity-60">
                         <XCircle className="w-4 h-4" /> Reject
                       </button>
                     </div>
@@ -296,7 +294,7 @@ export default function WorkflowsPage() {
                 <p className="text-sm mt-1">Click <span className="font-semibold text-emerald-600">Add New Position</span> to create one</p>
               </div>
             ) : hiring.map(job => (
-              <div key={job.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+              <div key={job._id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
                 <div className="flex items-start justify-between mb-5 flex-wrap gap-2">
                   <div>
                     <p className="text-lg font-bold text-gray-900">{job.role}</p>
@@ -304,12 +302,12 @@ export default function WorkflowsPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded-full">{job.status}</span>
-                    <button onClick={() => deletePosition(job.id, job.role)} className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg"><X className="w-4 h-4" /></button>
+                    <button onClick={() => deletePosition(job._id, job.role)} className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg"><X className="w-4 h-4" /></button>
                   </div>
                 </div>
                 <div className="space-y-3">
                   {(job.applicants || []).map((ap, idx) => {
-                    const key = job.id + '_' + idx;
+                    const key = job._id + '_' + idx;
                     return (
                       <div key={idx} className="border border-gray-100 rounded-xl p-4">
                         <div className="flex items-start justify-between flex-wrap gap-2 mb-3">
@@ -318,7 +316,7 @@ export default function WorkflowsPage() {
                             <p className="text-xs text-gray-500">{ap.email}</p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <select value={ap.stage} onChange={e => updateApplicantStage(job.id, idx, e.target.value)} className="border border-gray-200 rounded-lg px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                            <select value={ap.stage} onChange={e => updateApplicantStage(job._id, idx, e.target.value)} className="border border-gray-200 rounded-lg px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-emerald-500">
                               {STAGES.map(s => <option key={s}>{s}</option>)}
                             </select>
                             <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${STAGE_COLORS[ap.stage] || 'bg-gray-100 text-gray-600'}`}>{ap.stage}</span>
@@ -373,7 +371,7 @@ export default function WorkflowsPage() {
               const done = record.tasks.filter(t => t.done).length;
               const pct = Math.round(done / record.tasks.length * 100);
               return (
-                <div key={record.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                <div key={record._id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
                   <div className="flex items-start justify-between mb-4 flex-wrap gap-2">
                     <div>
                       <p className="text-lg font-bold text-gray-900">{record.employeeName}</p>
@@ -473,7 +471,7 @@ export default function WorkflowsPage() {
                 {empSuggestions.length > 0 && !offboardForm.employeeId && (
                   <div className="absolute z-10 left-0 right-0 top-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-44 overflow-y-auto">
                     {empSuggestions.map(emp=>(
-                      <button key={emp.id} type="button" onMouseDown={()=>selectEmployee(emp)} className="w-full text-left px-4 py-2.5 hover:bg-red-50 flex items-center gap-2">
+                      <button key={emp._id} type="button" onMouseDown={()=>selectEmployee(emp)} className="w-full text-left px-4 py-2.5 hover:bg-red-50 flex items-center gap-2">
                         <div className="w-7 h-7 rounded-full bg-red-100 flex items-center justify-center text-xs font-bold text-red-700">{emp.name.charAt(0)}</div>
                         <div><p className="text-sm font-medium">{emp.name}</p><p className="text-xs text-gray-400">{emp.department} · {emp.designation}</p></div>
                       </button>

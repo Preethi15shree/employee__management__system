@@ -68,7 +68,7 @@ export default function ProfilePage() {
     if (!user?.employeeId) { setLoading(false); return; }
     api.get('/employees')
       .then((r) => {
-        const emp = r.data.find(e => String(e.id) === String(user.employeeId));
+        const emp = r.data.find(e => String(e._id) === String(user.employeeId));
         if (!emp) { setLoading(false); return; }
         setEmployee(emp);
         setForm(buildForm(emp));
@@ -99,7 +99,7 @@ export default function ProfilePage() {
     setSaving(true);
     try {
       const updated = { ...employee, ...form };
-      await api.put('/employees/' + employee.id, updated);
+      await api.put('/employees/' + employee._id, updated);
       setEmployee(updated);
       setEditing(false);
       toast.success('Profile saved successfully!');

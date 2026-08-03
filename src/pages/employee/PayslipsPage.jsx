@@ -154,7 +154,7 @@ export default function PayslipsPage() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {payslips.map(ps => (
-            <div key={ps.id} className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-indigo-200 transition cursor-pointer group" onClick={() => setSelected(ps)}>
+            <div key={ps._id} className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-indigo-200 transition cursor-pointer group" onClick={() => setSelected(ps)}>
               <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-t-xl px-5 py-4">
                 <div className="flex items-center justify-between">
                   <div>

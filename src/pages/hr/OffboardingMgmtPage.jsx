@@ -42,7 +42,7 @@ export default function HROffboardingPage() {
     : [];
 
   function selectEmployee(emp) {
-    setForm(p => ({ ...p, employeeId: String(emp.id), employeeName: emp.name, managerId: String(emp.managerId || '2') }));
+    setForm(p => ({ ...p, employeeId: String(emp._id), employeeName: emp.name, managerId: String(emp.managerId || '') }));
     setEmpSearch(emp.name);
   }
 
@@ -79,12 +79,12 @@ export default function HROffboardingPage() {
     const tasks = record.tasks.map((t, i) => i === idx ? { ...t, done: !t.done } : t);
     const allDone = tasks.every(t => t.done);
     try {
-      await api.patch('/offboarding/' + record.id, { tasks, status: allDone ? 'Completed' : 'In Progress' });
+      await api.patch('/offboarding/' + record._id, { tasks, status: allDone ? 'Completed' : 'In Progress' });
       if (allDone) {
         // Remove the employee from the employees list
-        const emp = employees.find(e => String(e.id) === String(record.employeeId));
+        const emp = employees.find(e => String(e._id) === String(record.employeeId));
         if (emp) {
-          await api.delete('/employees/' + emp.id);
+          await api.delete('/employees/' + emp._id);
           toast.success(record.employeeName + "'s offboarding completed & removed from employees");
         } else {
           toast.success(record.employeeName + "'s offboarding completed!");
@@ -144,7 +144,7 @@ export default function HROffboardingPage() {
             const done = record.tasks.filter(t => t.done).length;
             const pct = Math.round(done / record.tasks.length * 100);
             return (
-              <div key={record.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+              <div key={record._id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
                 <div className="flex items-start justify-between mb-4 flex-wrap gap-2">
                   <div className="flex items-center gap-3">
                     <div className="w-11 h-11 rounded-full bg-purple-100 flex items-center justify-center font-bold text-purple-700 text-lg">{record.employeeName.charAt(0)}</div>
@@ -156,7 +156,7 @@ export default function HROffboardingPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className={`text-xs px-2.5 py-1 rounded-full font-semibold ${record.status === 'Completed' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>{record.status}</span>
-                    <button onClick={() => deleteRecord(record.id, record.employeeName)} className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg">
+                    <button onClick={() => deleteRecord(record._id, record.employeeName)} className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg">
                       <X className="w-4 h-4" />
                     </button>
                   </div>
@@ -216,7 +216,7 @@ export default function HROffboardingPage() {
                 {empSuggestions.length > 0 && !form.employeeId && (
                   <div className="absolute z-10 left-0 right-0 top-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-44 overflow-y-auto">
                     {empSuggestions.map(emp => (
-                      <button key={emp.id} type="button" onMouseDown={() => selectEmployee(emp)} className="w-full text-left px-4 py-2.5 hover:bg-purple-50 flex items-center gap-2">
+                      <button key={emp._id} type="button" onMouseDown={() => selectEmployee(emp)} className="w-full text-left px-4 py-2.5 hover:bg-purple-50 flex items-center gap-2">
                         <div className="w-7 h-7 rounded-full bg-purple-100 flex items-center justify-center text-xs font-bold text-purple-700">{emp.name.charAt(0)}</div>
                         <div><p className="text-sm font-medium">{emp.name}</p><p className="text-xs text-gray-400">{emp.department} · {emp.designation}</p></div>
                       </button>

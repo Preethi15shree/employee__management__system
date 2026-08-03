@@ -1,0 +1,12 @@
+{"employeeId":"1","employeeName":"Alice Johnson","date":"2026-07-31","checkIn":"09:02","checkOut":"18:10","status":"Present","shift":"Morning","_id":"1"}
+{"employeeId":null,"employeeName":"Jack Turner","date":"2026-07-31","checkIn":"09:00","checkOut":"18:00","status":"Present","shift":"Morning","_id":"10"}
+{"employeeId":"11","employeeName":"Karen Adams","date":"2026-07-31","checkIn":"08:45","checkOut":"17:45","status":"Present","shift":"Morning","_id":"11"}
+{"employeeId":null,"employeeName":"Leo Martinez","date":"2026-07-31","checkIn":null,"checkOut":null,"status":"Absent","shift":"Morning","_id":"12"}
+{"employeeId":"2","employeeName":"Bob Smith","date":"2026-07-31","checkIn":"08:55","checkOut":"18:00","status":"Present","shift":"Morning","_id":"2"}
+{"employeeId":"3","employeeName":"Carol White","date":"2026-07-31","checkIn":null,"checkOut":null,"status":"Absent","shift":"Morning","_id":"3"}
+{"employeeId":"4","employeeName":"David Brown","date":"2026-07-31","checkIn":"09:30","checkOut":"18:30","status":"Late","shift":"Morning","_id":"4"}
+{"employeeId":"5","employeeName":"Eva Green","date":"2026-07-31","checkIn":"09:00","checkOut":"18:00","status":"Present","shift":"Morning","_id":"5"}
+{"employeeId":"6","employeeName":"Frank Lee","date":"2026-07-31","checkIn":"09:05","checkOut":"18:05","status":"Present","shift":"Morning","_id":"6"}
+{"employeeId":"7","employeeName":"Grace Kim","date":"2026-07-31","checkIn":null,"checkOut":null,"status":"On Leave","shift":"Morning","_id":"7"}
+{"employeeId":"8","employeeName":"Henry Wilson","date":"2026-07-31","checkIn":"09:10","checkOut":"17:50","status":"Present","shift":"Morning","_id":"8"}
+{"employeeId":"9","employeeName":"Iris Chen","date":"2026-07-31","checkIn":"08:50","checkOut":"18:00","status":"Present","shift":"Morning","_id":"9"}

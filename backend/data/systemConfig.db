@@ -1,0 +1,8 @@
+{"key":"company_name","value":"Acme Corporation","category":"General","description":"Official company name","_id":"1"}
+{"key":"work_hours_per_day","value":"8","category":"Work Policy","description":"Standard working hours per day","_id":"2"}
+{"key":"annual_leave_days","value":"21","category":"Leave Policy","description":"Annual leave entitlement per employee","_id":"3"}
+{"key":"session_timeout_minutes","value":"30","category":"Security","description":"Auto logout after inactivity","_id":"4"}
+{"key":"password_min_length","value":"8","category":"Security","description":"Minimum password length","_id":"5"}
+{"key":"mfa_enabled","value":"false","category":"Security","description":"Enable multi-factor authentication","_id":"6"}
+{"key":"work_locations","value":"New York, San Francisco, Remote","category":"General","description":"Available work locations","_id":"7"}
+{"key":"work_hours_per_day","value":"9","category":"Work Policy","description":"Standard working hours per day","_id":"2"}

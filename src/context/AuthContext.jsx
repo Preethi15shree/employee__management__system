@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useCallback } from 'react';
-import { saveAuth, clearAuth, getToken, getUser, generateToken, ROLE_HOME } from '../utils/auth';
+import { saveAuth, clearAuth, getToken, getUser, ROLE_HOME } from '../utils/auth';
 import api from '../utils/api';
 
 const AuthContext = createContext(null);
@@ -9,15 +9,12 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(getToken);
 
   const login = useCallback(async (email, password) => {
-    const res = await api.get('/users', { params: { email } });
-    const found = res.data.find((u) => u.email === email && u.password === password);
-    if (!found) throw new Error('Invalid email or password');
-    const { password: _pw, ...safeUser } = found;
-    const jwt = generateToken(safeUser);
-    saveAuth(jwt, safeUser);
+    const res = await api.post('/auth/login', { email, password });
+    const { token: jwt, user: loggedInUser } = res.data;
+    saveAuth(jwt, loggedInUser);
     setToken(jwt);
-    setUser(safeUser);
-    return safeUser;
+    setUser(loggedInUser);
+    return loggedInUser;
   }, []);
 
   const logout = useCallback(() => {

@@ -24,15 +24,13 @@ export default function TeamAnalyticsPage() {
     Promise.all([
       api.get('/employees'),
       api.get('/leaveRequests'),
-      api.get('/skills'),
       api.get('/performanceReviews'),
-    ]).then(([t, l, s, r]) => {
-      // Show all employees across all dashboards
+    ]).then(([t, l, r]) => {
       const allTeam = t.data;
-      const allTeamIds = allTeam.map(e => String(e.id));
+      const allTeamIds = allTeam.map(e => String(e._id));
       setTeam(allTeam);
       setLeaves(l.data);
-      setSkills(s.data.filter(sk => allTeamIds.includes(String(sk.employeeId))));
+      setSkills([]);
       setReviews(r.data);
     }).catch(() => toast.error('Failed to load analytics'))
       .finally(() => setLoading(false));
@@ -65,7 +63,7 @@ export default function TeamAnalyticsPage() {
     .map(([dept, count]) => ({ dept, count }));
 
   // Skills overview
-  const teamIds = team.map(e => String(e.id));
+  const teamIds = team.map(e => String(e._id));
   const teamSkills = skills.filter(s => teamIds.includes(String(s.employeeId)));
   const allSkillNames = [...new Set(teamSkills.flatMap(s => (s.skills || []).map(sk => sk.name)))];
 
@@ -181,7 +179,7 @@ export default function TeamAnalyticsPage() {
               </thead>
               <tbody className="divide-y divide-gray-50">
                 {teamSkills.map(ts => (
-                  <tr key={ts.id} className="hover:bg-gray-50">
+                  <tr key={ts._id} className="hover:bg-gray-50">
                     <td className="py-2.5 pr-6 font-medium text-gray-900 whitespace-nowrap">{ts.employeeName}</td>
                     {allSkillNames.map(sn => {
                       const sk = (ts.skills || []).find(s => s.name === sn);

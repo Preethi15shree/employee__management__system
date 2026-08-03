@@ -1,0 +1,10 @@
+{"employeeId":"1","employeeName":"Alice Johnson","type":"Annual","from":"2026-08-01","to":"2026-08-03","days":3,"reason":"Family vacation","status":"Pending","managerId":"2","appliedOn":"2026-07-25","_id":"1"}
+{"employeeId":"5","employeeName":"Eva Green","type":"Sick","from":"2026-07-28","to":"2026-07-29","days":2,"reason":"Fever and cold","status":"Approved","managerId":"2","appliedOn":"2026-07-27","_id":"2"}
+{"employeeId":"6","employeeName":"Frank Lee","type":"Casual","from":"2026-08-10","to":"2026-08-10","days":1,"reason":"Personal work","status":"Pending","managerId":"2","appliedOn":"2026-07-30","_id":"3"}
+{"employeeId":"8","employeeName":"Henry Wilson","type":"Annual","from":"2026-09-01","to":"2026-09-05","days":5,"reason":"Holiday trip","status":"Rejected","managerId":"2","appliedOn":"2026-07-20","_id":"4"}
+{"employeeId":"4","employeeName":"David Brown","type":"Casual","from":"2026-08-05","to":"2026-08-05","days":1,"reason":"Doctor appointment","status":"Pending","managerId":"2","appliedOn":"2026-07-31","_id":"5"}
+{"type":"Casual","from":"2026-07-01","to":"2026-07-02","reason":"Personal","days":2,"employeeId":"1","employeeName":"Alice Johnson","managerId":"2","status":"Approved","appliedOn":"2026-07-31","_id":"7F3kWSpkSrI"}
+{"type":"Annual","from":"2026-07-01","to":"2026-07-31","reason":"Annual Vacation","days":31,"employeeId":"1","employeeName":"Alice Johnson","managerId":"2","status":"Rejected","appliedOn":"2026-07-31","_id":"Hhx5dYmEMTY"}
+{"employeeId":"1","employeeName":"Alice Johnson","type":"Sick","from":"2026-07-10","to":"2026-07-14","days":5,"reason":"Viral Fever","managerId":"2","status":"Pending","appliedOn":"2026-07-31","_id":"vd1YiP6ENok"}
+{"employeeId":"1785517580032","employeeName":"Preethi Shree B","type":"Sick","from":"2026-07-01","to":"2026-07-09","days":9,"reason":"Typhoid","managerId":"2","status":"Pending","appliedOn":"2026-07-31","_id":"wXRnAWnPfEU"}
+{"employeeId":"1","employeeName":"Alice Johnson","type":"Casual","from":"2026-08-05","to":"2026-08-06","days":2,"reason":"Personal","managerId":"2","status":"Pending","appliedOn":"2026-08-03","_id":"DCTAWiXE2VFlGZ4m"}

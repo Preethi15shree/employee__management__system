@@ -40,9 +40,9 @@ export default function LeaveApprovalsPage() {
   }, [mid]);
 
   async function updateStatus(leave, status) {
-    setUpdating(leave.id);
+    setUpdating(leave._id);
     try {
-      await api.patch('/leaveRequests/' + leave.id, { status });
+      await api.patch('/leaveRequests/' + leave._id, { status });
       toast.success('Leave request ' + status.toLowerCase() + ' successfully');
       await fetchLeaves(true);
     } catch {
@@ -87,7 +87,7 @@ export default function LeaveApprovalsPage() {
       ) : (
         <div className="space-y-3">
           {filtered.sort((a,b) => b.appliedOn.localeCompare(a.appliedOn)).map(lr => (
-            <div key={lr.id} className="bg-white rounded-xl shadow-sm p-5">
+            <div key={lr._id} className="bg-white rounded-xl shadow-sm p-5">
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
@@ -102,10 +102,10 @@ export default function LeaveApprovalsPage() {
                 </div>
                 {lr.status === 'Pending' && (
                   <div className="flex gap-2 flex-shrink-0">
-                    <button disabled={updating === lr.id} onClick={() => updateStatus(lr, 'Approved')} className="flex items-center gap-1.5 bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium disabled:opacity-60">
+                    <button disabled={updating === lr._id} onClick={() => updateStatus(lr, 'Approved')} className="flex items-center gap-1.5 bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium disabled:opacity-60">
                       <CheckCircle className="w-4 h-4" /> Approve
                     </button>
-                    <button disabled={updating === lr.id} onClick={() => updateStatus(lr, 'Rejected')} className="flex items-center gap-1.5 bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium disabled:opacity-60">
+                    <button disabled={updating === lr._id} onClick={() => updateStatus(lr, 'Rejected')} className="flex items-center gap-1.5 bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium disabled:opacity-60">
                       <XCircle className="w-4 h-4" /> Reject
                     </button>
                   </div>

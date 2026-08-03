@@ -77,13 +77,13 @@ export default function PerformanceReviewsPage() {
   }
 
   function selectEmployee(emp) {
-    setForm(p => ({ ...p, employeeId: String(emp.id), employeeName: emp.name }));
+    setForm(p => ({ ...p, employeeId: String(emp._id), employeeName: emp.name }));
     setEmpSearch(emp.name);
     setShowSugg(false);
   }
 
   const empSuggestions = empSearch.length >= 1
-    ? allEmployees.filter(e => e.name.toLowerCase().includes(empSearch.toLowerCase()) && String(e.id) !== mid)
+    ? allEmployees.filter(e => e.name.toLowerCase().includes(empSearch.toLowerCase()) && String(e._id) !== mid)
     : [];
 
   async function handleSave(e) {
@@ -101,10 +101,10 @@ export default function PerformanceReviewsPage() {
         reviewedOn: new Date().toISOString().split('T')[0],
       };
       if (editTarget) {
-        await api.put('/performanceReviews/' + editTarget.id, { ...editTarget, ...payload });
+        await api.put('/performanceReviews/' + editTarget._id, { ...editTarget, ...payload });
         toast.success('Review updated successfully');
       } else {
-        await api.post('/performanceReviews', { id: Date.now().toString(), ...payload });
+        await api.post('/performanceReviews', { ...payload });
         toast.success('Review submitted for ' + form.employeeName);
       }
       setShowForm(false);
@@ -115,9 +115,9 @@ export default function PerformanceReviewsPage() {
 
   async function handleDelete(rev) {
     if (!window.confirm('Delete this performance review?')) return;
-    setDeleting(rev.id);
+    setDeleting(rev._id);
     try {
-      await api.delete('/performanceReviews/' + rev.id);
+      await api.delete('/performanceReviews/' + rev._id);
       toast.success('Review deleted');
       fetchAll();
     } catch { toast.error('Failed to delete review'); }
@@ -175,7 +175,7 @@ export default function PerformanceReviewsPage() {
       ) : (
         <div className="space-y-3">
           {displayed.sort((a, b) => b.reviewedOn?.localeCompare(a.reviewedOn || '') || 0).map(r => (
-            <div key={r.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+            <div key={r._id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-2">
@@ -203,8 +203,8 @@ export default function PerformanceReviewsPage() {
                 </div>
                 <div className="flex gap-2 flex-shrink-0">
                   <button onClick={() => openEdit(r)} className="text-xs border border-emerald-200 text-emerald-600 hover:bg-emerald-50 px-3 py-1.5 rounded-lg font-medium">Edit</button>
-                  <button onClick={() => handleDelete(r)} disabled={deleting === r.id} className="text-xs border border-red-200 text-red-500 hover:bg-red-50 px-3 py-1.5 rounded-lg font-medium disabled:opacity-50">
-                    {deleting === r.id ? '…' : 'Delete'}
+                  <button onClick={() => handleDelete(r)} disabled={deleting === r._id} className="text-xs border border-red-200 text-red-500 hover:bg-red-50 px-3 py-1.5 rounded-lg font-medium disabled:opacity-50">
+                    {deleting === r._id ? '…' : 'Delete'}
                   </button>
                 </div>
               </div>
@@ -238,7 +238,7 @@ export default function PerformanceReviewsPage() {
                 {showSugg && empSuggestions.length > 0 && !form.employeeId && (
                   <div className="absolute z-10 left-0 right-0 top-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-48 overflow-y-auto">
                     {empSuggestions.map(emp => (
-                      <button key={emp.id} type="button" onMouseDown={() => selectEmployee(emp)} className="w-full text-left px-4 py-2.5 hover:bg-emerald-50 flex items-center gap-2">
+                      <button key={emp._id} type="button" onMouseDown={() => selectEmployee(emp)} className="w-full text-left px-4 py-2.5 hover:bg-emerald-50 flex items-center gap-2">
                         <div className="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center text-xs font-bold text-emerald-700">{emp.name.charAt(0)}</div>
                         <div><p className="text-sm font-medium">{emp.name}</p><p className="text-xs text-gray-400">{emp.department} · {emp.designation}</p></div>
                       </button>

@@ -28,7 +28,7 @@ export default function RoleManagementPage() {
   async function handleSave(u) {
     setSaving(true);
     try {
-      await api.patch(`/users/${u.id}`, { role: editRole });
+      await api.patch(`/users/${u._id}`, { role: editRole });
       toast.success(`Role updated for ${u.name}`);
       setEditId(null);
       fetchUsers();
@@ -53,7 +53,7 @@ export default function RoleManagementPage() {
           </thead>
           <tbody className="divide-y divide-gray-50">
             {users.map(u => (
-              <tr key={u.id} className="hover:bg-gray-50">
+              <tr key={u._id} className="hover:bg-gray-50">
                 <td className="px-5 py-4">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-gradient-to-br from-slate-400 to-slate-600 flex items-center justify-center flex-shrink-0">
@@ -64,7 +64,7 @@ export default function RoleManagementPage() {
                 </td>
                 <td className="px-5 py-4 text-sm text-gray-600">{u.email}</td>
                 <td className="px-5 py-4">
-                  {editId === u.id ? (
+                  {editId === u._id ? (
                     <select value={editRole} onChange={e => setEditRole(e.target.value)} className="border border-gray-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-slate-500">
                       {ROLES.map(r => <option key={r} value={r}>{ROLE_LABELS[r]}</option>)}
                     </select>
@@ -75,13 +75,13 @@ export default function RoleManagementPage() {
                   )}
                 </td>
                 <td className="px-5 py-4">
-                  {editId === u.id ? (
+                  {editId === u._id ? (
                     <div className="flex gap-2">
                       <button onClick={() => handleSave(u)} disabled={saving} className="text-xs bg-slate-700 text-white px-3 py-1.5 rounded-lg hover:bg-slate-800 disabled:opacity-60">{saving ? 'Saving…' : 'Save'}</button>
                       <button onClick={() => setEditId(null)} className="text-xs border border-gray-300 text-gray-600 px-3 py-1.5 rounded-lg hover:bg-gray-50">Cancel</button>
                     </div>
                   ) : (
-                    <button onClick={() => { setEditId(u.id); setEditRole(u.role); }} className="flex items-center gap-1.5 text-sm text-slate-600 hover:text-slate-900">
+                    <button onClick={() => { setEditId(u._id); setEditRole(u.role); }} className="flex items-center gap-1.5 text-sm text-slate-600 hover:text-slate-900">
                       <Pencil className="w-3.5 h-3.5" /> Change Role
                     </button>
                   )}

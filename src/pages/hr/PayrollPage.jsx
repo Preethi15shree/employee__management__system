@@ -30,7 +30,7 @@ export default function PayrollPage() {
     setSaving(true);
     try {
       const netPay = calcNet(form);
-      await api.put(`/payroll/${editTarget.id}`, { ...editTarget, ...form, netPay, lastUpdated: new Date().toISOString().split('T')[0] });
+      await api.put(`/payroll/${editTarget._id}`, { ...editTarget, ...form, netPay, lastUpdated: new Date().toISOString().split('T')[0] });
       toast.success('Payroll updated');
       setEditTarget(null);
       fetchPayroll();
@@ -57,7 +57,7 @@ export default function PayrollPage() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {payroll.map(p => (
-                <tr key={p.id} className="hover:bg-gray-50">
+                <tr key={p._id} className="hover:bg-gray-50">
                   <td className="px-3 py-3 text-sm font-medium text-gray-900 whitespace-nowrap">{p.employeeName}</td>
                   <td className="px-3 py-3 text-sm text-gray-600">{p.department}</td>
                   <td className="px-3 py-3 text-sm text-gray-600">{fmt(p.basicSalary)}</td>

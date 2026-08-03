@@ -30,7 +30,7 @@ export default function OnboardingPage() {
     if (!form.name || !form.email || !form.department || !form.jobTitle || !form.startDate) { toast.error('Fill all fields'); return; }
     setSaving(true);
     try {
-      await api.post('/onboarding', { ...form, id: Date.now().toString(), status: 'Pending', documentsSubmitted: [] });
+      await api.post('/onboarding', { ...form, status: 'Pending', documentsSubmitted: [] });
       toast.success('New hire added to onboarding');
       setShowForm(false);
       setForm({ name: '', email: '', department: '', jobTitle: '', startDate: '', documentsRequired: [...ALL_DOCS] });
@@ -43,7 +43,7 @@ export default function OnboardingPage() {
       ? item.documentsSubmitted.filter(d => d !== doc)
       : [...item.documentsSubmitted, doc];
     const allDone = newDocs.length >= item.documentsRequired.length;
-    await api.patch(`/onboarding/${item.id}`, { documentsSubmitted: newDocs, status: allDone ? 'Completed' : 'In Progress' });
+    await api.patch(`/onboarding/${item._id}`, { documentsSubmitted: newDocs, status: allDone ? 'Completed' : 'In Progress' });
     if (allDone && !item.documentsSubmitted.includes(doc)) {
       // Add the new hire as a full employee and create their login account
       try {
@@ -98,7 +98,7 @@ export default function OnboardingPage() {
 
       <div className="space-y-4">
         {list.map(item => (
-          <div key={item.id} className="bg-white rounded-xl shadow-sm p-5">
+          <div key={item._id} className="bg-white rounded-xl shadow-sm p-5">
             <div className="flex items-start justify-between flex-wrap gap-3 mb-4">
               <div>
                 <div className="flex items-center gap-2 mb-0.5">

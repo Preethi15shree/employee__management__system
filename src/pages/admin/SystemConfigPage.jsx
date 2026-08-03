@@ -26,7 +26,7 @@ export default function SystemConfigPage() {
   async function handleSave(cfg) {
     setSaving(true);
     try {
-      await api.patch(`/systemConfig/${cfg.id}`, { value: editValue });
+      await api.patch(`/systemConfig/${cfg._id}`, { value: editValue });
       toast.success(`"${cfg.key}" updated`);
       setEditId(null);
       fetchConfigs();
@@ -48,13 +48,13 @@ export default function SystemConfigPage() {
             </div>
             <div className="divide-y divide-gray-50">
               {items.map(cfg => (
-                <div key={cfg.id} className="px-5 py-4 flex items-center gap-4 flex-wrap">
+                <div key={cfg._id} className="px-5 py-4 flex items-center gap-4 flex-wrap">
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-900">{cfg.key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</p>
                     <p className="text-xs text-gray-400">{cfg.description}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    {editId === cfg.id ? (
+                    {editId === cfg._id ? (
                       <>
                         <input
                           value={editValue}
@@ -68,7 +68,7 @@ export default function SystemConfigPage() {
                     ) : (
                       <>
                         <span className="text-sm font-semibold text-gray-700 bg-gray-100 px-3 py-1 rounded-lg">{cfg.value}</span>
-                        <button onClick={() => { setEditId(cfg.id); setEditValue(cfg.value); }} className="p-1.5 text-slate-500 hover:bg-slate-100 rounded"><Pencil className="w-4 h-4" /></button>
+                        <button onClick={() => { setEditId(cfg._id); setEditValue(cfg.value); }} className="p-1.5 text-slate-500 hover:bg-slate-100 rounded"><Pencil className="w-4 h-4" /></button>
                       </>
                     )}
                   </div>

@@ -72,25 +72,19 @@ export default function EmployeesPage() {
   async function handleSave(form) {
     try {
       if (editTarget) {
-        await api.put(`/employees/${editTarget.id}`, { ...editTarget, ...form });
+        await api.put(`/employees/${editTarget._id}`, { ...editTarget, ...form });
         toast.success('Employee updated');
       } else {
-        // Use sequential ID (same pattern as the rest of the app)
-        const empRes = await api.get('/employees');
-        const maxEid = empRes.data.reduce((m, e) => Math.max(m, Number(e.id) || 0), 0);
-        const empId = String(maxEid + 1);
         const { password, role, ...empFields } = form;
-        await api.post('/employees', { ...empFields, id: empId, status: empFields.status || 'Active', skills: [], salary: 0, managerId: '2' });
+        const empRes = await api.post('/employees', { ...empFields, status: empFields.status || 'Active', skills: [], salary: 0 });
+        const newEmpId = empRes.data._id;
         // Create login user account
-        const usersRes = await api.get('/users');
-        const maxUid = usersRes.data.reduce((m, u) => Math.max(m, Number(u.id) || 0), 0);
         await api.post('/users', {
-          id: String(maxUid + 1),
           email: form.email,
           password: password,
           name: form.name,
           role: role || 'employee',
-          employeeId: empId,
+          employeeId: newEmpId,
         });
         toast.success(`${form.name} registered! They can now log in with ${form.email}`);
       }
@@ -105,11 +99,11 @@ export default function EmployeesPage() {
   async function handleDelete() {
     setDeleting(true);
     try {
-      await api.delete(`/employees/${deleteTarget.id}`);
+      await api.delete(`/employees/${deleteTarget._id}`);
       // Also remove the linked user account
       const usersRes = await api.get('/users');
-      const linked = usersRes.data.find(u => String(u.employeeId) === String(deleteTarget.id));
-      if (linked) await api.delete(`/users/${linked.id}`);
+      const linked = usersRes.data.find(u => String(u.employeeId) === String(deleteTarget._id));
+      if (linked) await api.delete(`/users/${linked._id}`);
       toast.success('Employee and login account removed');
       setDeleteTarget(null);
       fetchEmployees();
@@ -179,7 +173,7 @@ export default function EmployeesPage() {
               </thead>
               <tbody className="divide-y divide-gray-50">
                 {paginated.map((emp) => (
-                  <tr key={emp.id} className="hover:bg-gray-50 transition">
+                  <tr key={emp._id} className="hover:bg-gray-50 transition">
                     <td className="px-4 py-3 text-sm font-medium text-gray-900">{emp.name}</td>
                     <td className="px-4 py-3 text-sm text-gray-600">{emp.email}</td>
                     <td className="px-4 py-3 text-sm text-gray-600">{emp.department}</td>

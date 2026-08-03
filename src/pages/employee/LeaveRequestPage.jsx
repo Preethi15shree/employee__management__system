@@ -67,11 +67,10 @@ export default function LeaveRequestPage() {
       let empRecord = null;
       try {
         const allEmps = await api.get('/employees');
-        empRecord = allEmps.data.find(e => String(e.id) === eid);
+        empRecord = allEmps.data.find(e => String(e._id) === eid);
       } catch { /* fallback */ }
 
       const payload = {
-        id: Date.now().toString(),
         employeeId: eid,
         employeeName: user.name,
         type: form.type,
@@ -163,7 +162,7 @@ export default function LeaveRequestPage() {
                 {leaves.map(lr => {
                   const Icon = STATUS_ICON[lr.status] || Clock;
                   return (
-                    <tr key={lr.id} className="hover:bg-gray-50 transition">
+                    <tr key={lr._id} className="hover:bg-gray-50 transition">
                       <td className="px-4 py-3">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-700">{lr.type}</span>
                       </td>

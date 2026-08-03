@@ -37,7 +37,7 @@ function EmployeeModal({ emp, onClose }) {
               ['Department', emp.department, Building2],
               ['Email', emp.email, Mail],
               ['Phone', emp.phone || '—', Phone],
-              ['Employee ID', '#' + emp.id, User],
+              ['Employee ID', '#' + (emp._id || '').slice(-6), User],
               ['Join Date', emp.joinDate || '—', Calendar],
               ['Salary', emp.salary ? '₹' + Number(emp.salary).toLocaleString('en-IN') + ' / yr' : '—', null],
             ].map(([label, value, Icon]) => (
@@ -90,8 +90,8 @@ export default function TeamDirectoryPage() {
 
   async function saveNote(emp) {
     try {
-      await api.patch('/employees/' + emp.id, { managerNote: noteText });
-      setTeam(prev => prev.map(e => e.id === emp.id ? { ...e, managerNote: noteText } : e));
+      await api.patch('/employees/' + emp._id, { managerNote: noteText });
+      setTeam(prev => prev.map(e => e._id === emp._id ? { ...e, managerNote: noteText } : e));
       toast.success('Note saved');
       setEditingNote(null);
     } catch { toast.error('Failed to save note'); }
@@ -126,7 +126,7 @@ export default function TeamDirectoryPage() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map(emp => (
-            <div key={emp.id} className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-emerald-200 transition p-5">
+            <div key={emp._id} className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-emerald-200 transition p-5">
               <div className="flex items-start gap-3 mb-3">
                 <div className="w-11 h-11 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-emerald-700 text-lg flex-shrink-0 cursor-pointer" onClick={() => setSelected(emp)}>{emp.name.charAt(0)}</div>
                 <div className="flex-1 min-w-0">
@@ -144,7 +144,7 @@ export default function TeamDirectoryPage() {
               </div>
 
               {/* Manager Note */}
-              {editingNote === emp.id ? (
+              {editingNote === emp._id ? (
                 <div className="mt-2">
                   <textarea value={noteText} onChange={e => setNoteText(e.target.value)} rows={2} placeholder="Add a private note about this team member…" className="w-full text-xs border border-gray-300 rounded-lg px-2 py-1.5 resize-none focus:outline-none focus:ring-1 focus:ring-emerald-500" />
                   <div className="flex gap-2 mt-1">
@@ -155,7 +155,7 @@ export default function TeamDirectoryPage() {
               ) : (
                 <div className="flex items-start justify-between mt-2">
                   <p className="text-xs text-gray-400 italic flex-1">{emp.managerNote || 'No notes yet'}</p>
-                  <button onClick={() => { setEditingNote(emp.id); setNoteText(emp.managerNote || ''); }} className="ml-2 flex-shrink-0 text-gray-400 hover:text-emerald-600"><Edit2 className="w-3.5 h-3.5" /></button>
+                  <button onClick={() => { setEditingNote(emp._id); setNoteText(emp.managerNote || ''); }}  className="ml-2 flex-shrink-0 text-gray-400 hover:text-emerald-600"><Edit2 className="w-3.5 h-3.5" /></button>
                 </div>
               )}
 

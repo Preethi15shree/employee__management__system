@@ -18,7 +18,6 @@ export default function BackupLogsPage() {
     setTriggering(true);
     try {
       await api.post('/backupLogs', {
-        id: Date.now().toString(),
         type,
         status: 'Success',
         size: type === 'Full Backup' ? '248 MB' : '15 MB',
@@ -85,7 +84,7 @@ export default function BackupLogsPage() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {logs.map(log => (
-                <tr key={log.id} className="hover:bg-gray-50">
+                <tr key={log._id} className="hover:bg-gray-50">
                   <td className="px-4 py-3 text-sm font-medium text-gray-900">{log.type}</td>
                   <td className="px-4 py-3">
                     <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full ${log.status === 'Success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-600'}`}>
